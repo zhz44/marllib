@@ -1,0 +1,12 @@
+env: mpe_env
+
+env_args:
+  name: "mpe"
+  num_agent: 3
+  map_name: "simple_spread" # others can be found in mpe.py
+  continuous_actions: False
+  max_cycles: 25
+
+mask_flag: False
+global_state_flag: False
+opp_action_in_cc: True
