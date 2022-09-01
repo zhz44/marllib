@@ -1,7 +1,7 @@
 import yaml
 import os
 import sys
-sys.path.insert(0, '/home/hz04/MARLlib')
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 from copy import deepcopy
 from marl.common import _get_config, recursive_dict_update, check_algo_type
 from marl.algos.run_il import run_il

@@ -1,6 +1,6 @@
 import numpy as np
 import sys
-sys.path.insert(0, "/home/hz04/MARLlib/envs/based_env/MPE")
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 from MPE.core import World, Agent, Landmark
 from MPE.scenario import BaseScenario
 
