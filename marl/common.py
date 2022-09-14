@@ -44,7 +44,6 @@ def _get_config(params, arg_name, info=None):
 
     elif "env" in arg_name:
         path = "../envs/base_env/config"
-
     else:
         raise ValueError()
 

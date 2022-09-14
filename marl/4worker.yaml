@@ -9,14 +9,15 @@ model_arch_args: {}
 share_policy: "individual" #  individual / group / all
 evaluation_interval: 10
 framework: "torch"
-num_workers: 1
+num_workers: 4
 num_gpus: 1
-num_gpus_per_worker: 0
+remote_worker_envs: False
+num_gpus_per_worker: 1
 num_cpus_per_worker: 1
-num_envs_per_worker: 128
-rollout_fragment_length: 128
+num_envs_per_worker: 42
+rollout_fragment_length: 10
 train_batch_size: 3200
-stop_iters: 20000
-stop_timesteps: 30000
+stop_iters: 100 
+stop_timesteps: 300000
 stop_reward: 999999
-seed: 123
+seed: 1234

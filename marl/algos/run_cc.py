@@ -15,13 +15,14 @@ tf1, tf, tfv = try_import_tf()
 torch, nn = try_import_torch()
 
 
-def run_cc(config_dict):
+def run_cc(config_dict, agent_num):
     ray.init(local_mode=config_dict["local_mode"])
 
     ###################
     ### environment ###
     ###################
 
+    config_dict["env_args"]["N"] = agent_num
     env_reg_ls = []
     check_current_used_env_flag = False
     for env_n in ENV_REGISTRY.keys():

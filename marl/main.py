@@ -11,7 +11,12 @@ from marl.algos.run_cc import run_cc
 if __name__ == '__main__':
     params = deepcopy(sys.argv)
 
-    with open(os.path.join(os.path.dirname(__file__), "ray.yaml"), "r") as f:
+    config = params[1]
+    agent_num = int(params[2])
+    print(config)
+    if config == None:
+        config = "ray.yaml"
+    with open(os.path.join(os.path.dirname(__file__), config), "r") as f:
         config_dict = yaml.load(f, Loader=yaml.FullLoader)
         f.close()
 
@@ -41,6 +46,6 @@ if __name__ == '__main__':
     elif algo_type == "VD":
         run_vd(config_dict)
     elif algo_type == "CC":
-        run_cc(config_dict)
+        run_cc(config_dict, agent_num)
     else:
         raise ValueError("algo not in supported algo_type")
